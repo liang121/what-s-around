@@ -1,0 +1,3 @@
+rootProject.name = 'whatIsAround'
+
+include ':app'
