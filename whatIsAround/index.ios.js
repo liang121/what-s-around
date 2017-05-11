@@ -11,21 +11,18 @@ import {
   Text,
   View
 } from 'react-native';
-
+import LogIn from './src/components/log-in.component'
 export default class whatIsAround extends Component {
+  renderHeader() {
+    return <View style={styles.header}>
+      <Text style={styles.headerText}>AnonyHelper</Text>
+    </View>
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        {this.renderHeader()}
+        <LogIn/>
       </View>
     );
   }
@@ -34,19 +31,21 @@ export default class whatIsAround extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'stretch',
+    borderColor: 'red',
+    borderWidth: 1,
+    backgroundColor: '#ebebeb'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  header: {
+    marginTop:20,
+    paddingLeft:10,
+    paddingTop:10,
+    paddingBottom:10,
+    backgroundColor: '#373a41'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  headerText: {
+    color: 'whitesmoke',
+    shadowColor: '#3c3b40'
   },
 });
 
