@@ -13,6 +13,9 @@ import {
 } from 'react-native';
 import LogIn from './src/components/log-in.component'
 export default class whatIsAround extends Component {
+  onPressLearnMore() {
+    console.log(123);
+  }
   renderHeader() {
     return <View style={styles.header}>
       <Text style={styles.headerText}>AnonyHelper</Text>
@@ -34,7 +37,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     borderColor: 'red',
     borderWidth: 1,
-    backgroundColor: '#ebebeb'
+    // backgroundColor: '#ebebeb'
   },
   header: {
     marginTop:20,
