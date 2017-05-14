@@ -15,6 +15,7 @@ export default class LogIn extends Component {
     console.log('login');
   }
   retriveAccount() {
+    console.log('retrive');
     this.props.navigation.navigate('RetriveAccount');
   }
   handleRegisterAccount() {
@@ -22,11 +23,11 @@ export default class LogIn extends Component {
   }
   /*two input and two button*/
   renderLogInArea() {
-    return <View style={styles.logInArea}>
+    return <View style={[styles.logInArea]}>
           {/*phone input and password input*/}
           <View style={styles.inputArea}>
             <Icon name="mobile" color="#900"  style={{fontSize:25, marginLeft:1, marginTop:2}}/>
-            <TextInput style={styles.textInput} placeholder='Phone Number' autoFocus={true}></TextInput>
+            <TextInput style={styles.textInput} placeholder='Phone Number'></TextInput>
           </View>
           <View style={styles.inputArea}>
             <Icon name="lock" color="#900"  style={{fontSize:20,  marginLeft:1, marginTop:5}}/>
@@ -42,14 +43,12 @@ export default class LogIn extends Component {
             </TouchableHighlight>
           </View>
         {/*forget password suggestion*/}
-          <View style={{justifyContent: 'center', alignItems: 'center', marginTop:80}}>
-            <TouchableHighlight>
-              <Text style={{fontSize:12, color:'#900'}} onPress={this.retriveAccount.bind(this)}>
+          <View style={{justifyContent: 'center', alignItems: 'center', marginTop:50}}>
+            <TouchableHighlight onPress={this.retriveAccount.bind(this)} underlayColor="#e9e9ef">
+              <Text style={{fontSize:12, color:'#900'}}>
                 Forget Password
               </Text>
             </TouchableHighlight>
-            {/*<Button style={{marginTop:100, fontSize:12, color: '#900'}} title="Forget Password">
-            </Button>*/}
           </View>
         </View>
   }

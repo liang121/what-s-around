@@ -17,7 +17,7 @@ export default class RetriveAccount extends Component {
   renderRetriveAccountContainer() {
     return <View style={styles.retriveContainer}>
       <View style={styles.inputArea}>
-        <TextInput style={styles.textInput} placeholder='Email' autoFocus={true}></TextInput>
+        <TextInput style={styles.textInput} placeholder='Email'></TextInput>
         {/*<TextInput style={styles.textInput} placeholder='Phone Number' autoFocus={true}></TextInput>*/}
       </View>
     </View>
@@ -31,8 +31,8 @@ export default class RetriveAccount extends Component {
   }
   renderSelectTab() {
     return <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
-      <View style={{flex:1, textAlign:'center', justifyContent: 'center', alignItems: 'center', borderBottomWidth:2, borderBottomColor:'red', paddingBottom:5}}><Text>By Email</Text></View>
-      <View style={{flex:1, textAlign:'center', justifyContent: 'center', alignItems: 'center', paddingBottom:5}}><Text>By Phone</Text></View>
+      <View style={{flex:1, justifyContent: 'center', alignItems: 'center', borderBottomWidth:2, borderBottomColor:'red', paddingBottom:5}}><Text>By Email</Text></View>
+      <View style={{flex:1, justifyContent: 'center', alignItems: 'center', paddingBottom:5}}><Text>By Phone</Text></View>
     </View>
   }
   render() {
