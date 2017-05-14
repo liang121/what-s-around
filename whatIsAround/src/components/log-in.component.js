@@ -14,8 +14,10 @@ export default class LogIn extends Component {
   login() {
     console.log('login');
   }
+  retriveAccount() {
+    this.props.navigation.navigate('RetriveAccount');
+  }
   handleRegisterAccount() {
-    console.log('123')
     this.props.navigation.navigate('RegisterAccount');
   }
   /*two input and two button*/
@@ -32,18 +34,22 @@ export default class LogIn extends Component {
           </View>
         {/*login button and register account button*/}
           <View style={{marginTop:20}}>
-            <TouchableHighlight style={styles.loginButton} underlayColor="gray" onPress={this.login.bind(this)}>
+            <TouchableHighlight style={styles.button} underlayColor="gray" onPress={this.login.bind(this)}>
               <Text style={styles.loginButtonText}>Login</Text>
             </TouchableHighlight>
-            <TouchableHighlight style={[styles.loginButton, {marginTop:10}]} underlayColor="gray" onPress={this.handleRegisterAccount.bind(this)}>
+            <TouchableHighlight style={[styles.button, {marginTop:15}]} underlayColor="gray" onPress={this.handleRegisterAccount.bind(this)}>
               <Text style={styles.loginButtonText}>Register Account</Text>
             </TouchableHighlight>
           </View>
         {/*forget password suggestion*/}
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{marginTop:100, fontSize:12, color: '#900'}}>
-              Forget Password
-            </Text>
+          <View style={{justifyContent: 'center', alignItems: 'center', marginTop:80}}>
+            <TouchableHighlight>
+              <Text style={{fontSize:12, color:'#900'}} onPress={this.retriveAccount.bind(this)}>
+                Forget Password
+              </Text>
+            </TouchableHighlight>
+            {/*<Button style={{marginTop:100, fontSize:12, color: '#900'}} title="Forget Password">
+            </Button>*/}
           </View>
         </View>
   }
@@ -73,11 +79,12 @@ export default class LogIn extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    // backgroundColor:'white'
   },
   logInContainer: {
     flex: 1,
-    borderWidth: 1,
+    // borderWidth: 1,
     paddingLeft:37,
     paddingRight: 37,
     paddingTop: 20
@@ -118,10 +125,10 @@ const styles = StyleSheet.create({
     marginTop:2, 
     fontSize:15
   },
-  loginButton: {
+  button: {
     backgroundColor: '#900',
-    paddingTop:15,
-    paddingBottom: 15,
+    paddingTop:10,
+    paddingBottom: 10,
     justifyContent: 'center', 
     alignItems: 'center',
     borderRadius:3,

@@ -11,34 +11,36 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-export default class RegisterAccount extends Component {
+export default class RetriveAccount extends Component {
   login() {
   }
-  renderRegisterAccountContainer() {
-    return <View style={styles.registerContainer}>
+  renderRetriveAccountContainer() {
+    return <View style={styles.retriveContainer}>
       <View style={styles.inputArea}>
         <TextInput style={styles.textInput} placeholder='Email' autoFocus={true}></TextInput>
-      </View>
-      <View style={styles.inputArea}>
-        <TextInput style={styles.textInput} placeholder='Phone Number'></TextInput>
-      </View>
-      <View style={styles.inputArea}>
-        <TextInput style={styles.textInput} placeholder='Password'></TextInput>
+        {/*<TextInput style={styles.textInput} placeholder='Phone Number' autoFocus={true}></TextInput>*/}
       </View>
     </View>
   }
-  renderRegisterButton() {
-    return <View style={styles.registerButtonContainer}>
-      <TouchableHighlight style={styles.registerButton} underlayColor="gray" onPress={this.login.bind(this)}>
-        <Text style={styles.registerButtonText}>Register</Text>
+  renderRetriveButton() {
+    return <View style={styles.retriveButtonContainer}>
+      <TouchableHighlight style={styles.retriveButton} underlayColor="gray" onPress={this.login.bind(this)}>
+        <Text style={styles.retriveButtonText}>Retrive</Text>
       </TouchableHighlight>
+    </View>
+  }
+  renderSelectTab() {
+    return <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+      <View style={{flex:1, textAlign:'center', justifyContent: 'center', alignItems: 'center', borderBottomWidth:2, borderBottomColor:'red', paddingBottom:5}}><Text>By Email</Text></View>
+      <View style={{flex:1, textAlign:'center', justifyContent: 'center', alignItems: 'center', paddingBottom:5}}><Text>By Phone</Text></View>
     </View>
   }
   render() {
     return (
       <View style={styles.container}>
-        {this.renderRegisterAccountContainer()}
-        {this.renderRegisterButton()}
+        {this.renderSelectTab()}
+        {this.renderRetriveAccountContainer()}
+        {this.renderRetriveButton()}
         <View style={{flex:5}}></View>
       </View>
     );
@@ -53,8 +55,8 @@ const styles = StyleSheet.create({
     paddingRight:20,
     // backgroundColor: 'white'
   },
-  registerContainer: {
-    flex: 3,
+  retriveContainer: {
+    flex: 1,
     borderWidth: 2,
     borderColor: '#dddddd',
     borderRadius: 10,
@@ -64,16 +66,17 @@ const styles = StyleSheet.create({
       height: 3
     },
     shadowRadius: 5,
-    shadowOpacity: 1.0
+    shadowOpacity: 1.0,
+    marginTop:30
   },
-  registerButtonContainer: {
+  retriveButtonContainer: {
     flex:1,
     marginTop:30
   },
-  registerButtonText: {
+  retriveButtonText: {
     color: 'white'
   },
-  registerButton: {
+  retriveButton: {
     backgroundColor: '#900',
     paddingTop:15,
     paddingBottom: 15,
